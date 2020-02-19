@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "VicodersCliExampleHandler",
+  "title": "Vicoders CLI example handler",
+  "type": "object",
+  "description": "Example handler",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "The root path of project",
+      "default": "/"
+    }
+  }
+}
