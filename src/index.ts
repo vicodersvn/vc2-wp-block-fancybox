@@ -2,8 +2,6 @@ import { Rule, chain, apply, url, move, mergeWith, applyTemplates } from '@angul
 import { strings } from '@angular-devkit/core';
 import { WordpressService } from './services/Php/Wordpress/WordpressService';
 import { App } from '@nsilly/container';
-import { appendTo } from './utility/append-to-file/append-to-file';
-import * as path from 'path';
 
 export default function handler(options: any): Rule {
   const templateSource = apply(url('./files/fancybox'), [
