@@ -2,6 +2,7 @@ import { Rule, chain, apply, url, move, mergeWith, applyTemplates } from '@angul
 import { strings } from '@angular-devkit/core';
 import { WordpressService } from './services/Php/Wordpress/WordpressService';
 import { App } from '@nsilly/container';
+import { appendTo } from './utility/append-to-file/append-to-file';
 import * as path from 'path';
 
 export default function handler(options: any): Rule {
@@ -12,8 +13,10 @@ export default function handler(options: any): Rule {
     }),
     move(options.path)
   ]);
+  const block_script = path.resolve(process.cwd(), 'resrources', 'assets', 'scripts', 'blocks', 'index.js');
   return chain([
     mergeWith(templateSource),
-    App.make(WordpressService).declareInServiceProvider('app/Providers/BlockServiceProvider.php', `\\App\\Blocks\\FancyBoxBlock::class,`)
+    App.make(WordpressService).declareInServiceProvider('app/Providers/BlockServiceProvider.php', `\\App\\Blocks\\FancyBoxBlock::class,`),
+    appendTo(block_script, 'import "./slider.js";')
   ]);
 }
