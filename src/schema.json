@@ -8,13 +8,13 @@
     "name": {
       "type": "string",
       "description": "Name of component",
-      "default": "VC Slider",
+      "default": "VC Fancy Box",
       "x-prompt": "Name of component"
     },
     "description": {
       "type": "string",
       "description": "Description of component",
-      "default": "VC Slider Gutenburg Block",
+      "default": "VC Fancy Box Gutenburg Block",
       "x-prompt": "Description of component"
     },
     "category": {
